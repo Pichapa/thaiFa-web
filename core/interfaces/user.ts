@@ -1,4 +1,4 @@
-interface userFormPayload {
+export interface userFormPayload {
   firstName: string;
   lastName: string;
   mobileNumber: number;

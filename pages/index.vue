@@ -14,6 +14,8 @@
 </template>
 
 <script setup>
+import {userFormPayload} from "~/core/interfaces/user";
+
 definePageMeta({
   middleware: ["auth"], // this should match the name of the file inside the middl,eware directory
 });
@@ -21,7 +23,14 @@ import { storeToRefs } from "pinia";
 import { useAuthStore } from "~/store/auth";
 import { useForm } from "vee-validate";
 
-// const { errors } = useForm <userFormPayload> ();
+const { errors } = useForm<userFormPayload> ({
+    initialValues: {
+        email: "",
+        lastName: "",
+        firstName: "",
+        mobileNumber: ""
+    }
+});
 
 // const { errors, setErrors, setFieldValue } = useForm<userFormPayload> ();
 
